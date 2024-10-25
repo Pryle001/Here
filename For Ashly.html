@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive; /* Pixel-style font */
+            background-image: url('https://64.media.tumblr.com/e5040c27298627a51415dcc01c0bb99c/029fc348de0f894d-c3/s1280x1920/24b9e2bb00eb8f9d85072dfe208e1fab38306fcb.png');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #ffffff; /* White text */
+        }
+
+        .container {
+            background: rgba(75, 75, 75, 0.8); /* Transparent background */
+            border-radius: 10px;
+            padding: 20px;
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .birthday-message {
+            font-size: 1.5rem;
+            margin: 0 20px;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .birthday-image, .right-image {
+            width: 70px;
+            height: 70px;
+            object-fit: cover; /* Ensures the images stay within the pixel art theme */
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 1rem;
+            margin: 20px 0;
+            opacity: 0.85; /* Adjust text visibility */
+        }
+
+        .popup-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #000000; /* Black text */
+            background-color: #add8e6; /* Light blue */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Press Start 2P', cursive;
+            border-radius: 5px;
+        }
+
+        .popup-button:hover {
+            background-color: #87ceeb; /* Lighter blue on hover */
+        }
+
+        .message-box {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            color: #000; /* Default black text */
+            z-index: 1000;
+            max-width: 500px;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-image: none; /* Default */
+            background-size: cover;
+        }
+
+        .message-box p {
+            color: #000000; /* Black text */
+            text-align: center;
+        }
+
+        .close-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .close-button:hover {
+            background-color: #ff3b2f;
+        }
+
+        @font-face {
+            font-family: 'Press Start 2P';
+            src: url('https://fonts.gstatic.com/s/pressstart2p/v10/e3t4euO8ob8CjfmxD-R6V5CU5LJlaI5G.ttf');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.pinimg.com/736x/44/17/98/4417986f96ecbd8f5b96dc0637ed51ba.jpg" alt="Pixel Art Girl" class="birthday-image">
+            <h1 class="birthday-message">Happy Birthday!</h1>
+            <img src="https://preview.redd.it/i5itial8ixf81.jpg?width=708&format=pjpg&auto=webp&s=c1a167d7bc5943004f26e526d04a97506a4a792f" alt="Pixel Cake" class="right-image">
+        </div>
+
+        <button class="popup-button" onclick="showMessageBox()">CLICK HERE</button>
+    </div>
+
+    <div class="message-box" id="messageBox">
+        <p> Hi Pookie! I want you to know how much you mean to me. I'm always here for you, no matter what challenges you face. Life can be tough sometimes, but I truly believe that brighter days are just around the corner for you. I hope this year brings you endless joy, laughter, and all the love you deserve. Remember, you're never alone; I'm cheering you on every step of the way. Enjoy your day to the fullest!</p>
+        <button class="close-button" onclick="closeMessageBox()">Close</button>
+    </div>
+
+    <script>
+        function showMessageBox() {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.style.display = 'block'; 
+            messageBox.style.backgroundImage = "url('https://preview.redd.it/j7pt9senwgp71.png?auto=webp&s=ef09aeb6964d755713b5c99888539a788630d1cd')";
+            setTimeout(() => {
+                messageBox.style.opacity = '1';
+            }, 10); 
+        }
+
+        function closeMessageBox() {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.style.opacity = '0';
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 500); 
+        }
+    </script>
+</body>
+</html>
